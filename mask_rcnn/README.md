@@ -1,3 +1,10 @@
+# Faster R-CNN and Mask R-CNN in PyTorch 1.0
+
+This project aims at providing the necessary building blocks for easily
+creating detection and segmentation models using PyTorch 1.0.
+
+![alt text](demo/demo_e2e_mask_rcnn_X_101_32x8d_FPN_1x.png "from http://cocodataset.org/#explore?id=345434")
+
 ## Installation
 
 ### Requirements:
@@ -52,3 +59,13 @@ python setup.py build develop
 
 
 unset INSTALL_DIR
+```
+## Demo
+
+Download the pretrain models [here.](https://drive.google.com/open?id=1IBKBHT0o_3unCWuoFe4JP7LdMaazU3qw)
+Then, create a folder, '/pretrain' and put the pretrain models inside the folder.  
+
+```bash
+cd demo
+python demo.py
+```
