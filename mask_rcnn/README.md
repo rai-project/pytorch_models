@@ -3,8 +3,6 @@
 This project aims at providing the necessary building blocks for easily
 creating detection and segmentation models using PyTorch 1.0.
 
-![alt text](demo/demo_e2e_mask_rcnn_X_101_32x8d_FPN_1x.png "from http://cocodataset.org/#explore?id=345434")
-
 ## Installation
 
 ### Requirements:
@@ -15,9 +13,6 @@ creating detection and segmentation models using PyTorch 1.0.
 - matplotlib
 - GCC >= 4.9
 - (optional) OpenCV for the webcam demo
-
-
-### Option 1: Step-by-step installation
 
 ```bash
 # first, make sure that your conda is setup properly with the right environment
