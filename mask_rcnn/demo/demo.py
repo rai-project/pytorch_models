@@ -1,6 +1,5 @@
 from PIL import Image
 import numpy as np
-import matplotlib.pyplot as plt
 import torch
 import cv2
 from torchvision import transforms as T
