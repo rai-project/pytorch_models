@@ -270,20 +270,21 @@ def overlay_class_names(image, predictions):
 
     return image
 
-model_path = '../pretrain/e2e_mask_rcnn_R_50_FPN_1x_caffe2.pth'
-image_path = "./input.jpg"
-output_path = "./"
+if __name__ == '__main__':
+    model_path = '../pretrain/e2e_mask_rcnn_R_50_FPN_1x_caffe2.pth'
+    image_path = "./input.jpg"
+    output_path = "./"
 
-model = torch.load(model_path)
-model.eval()
-model.to(device)
-transforms = build_transform()
-masker = Masker(threshold=mask_threshold, padding=1)
+    model = torch.load(model_path)
+    model.eval()
+    model.to(device)
+    transforms = build_transform()
+    masker = Masker(threshold=mask_threshold, padding=1)
 
 
-image = Image.open(image_path)
-image = np.array(image)[:, :, [2, 1, 0]]
+    image = Image.open(image_path)
+    image = np.array(image)[:, :, [2, 1, 0]]
 
-prediction = run_prediction(image)
-prediction = Image.fromarray(prediction[:, :, [2, 1, 0]])
-prediction.save(output_path+'output.jpg')
+    prediction = run_prediction(image)
+    prediction = Image.fromarray(prediction[:, :, [2, 1, 0]])
+    prediction.save(output_path+'output.jpg')
