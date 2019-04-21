@@ -29,8 +29,11 @@ if TEST_MODE:
     image = image.cuda()
 
 traced_script_module = torch.jit.trace(model, image)
-traced_script_module.save("model.pt")
+traced_script_module.save("./python_free_models/netG_epoch_4_100.pt")
 
-output = traced_script_module(image)
+
+jit_model = torch.jit.load("./python_free_models/netG_epoch_4_100.pt")
+
+output = jit_model(image)
 out_img = ToPILImage()(output[0].data.cpu())
 out_img.save(str(UPSCALE_FACTOR) + '_tranced_' + IMAGE_NAME)

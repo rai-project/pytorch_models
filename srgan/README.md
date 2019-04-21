@@ -13,9 +13,8 @@ conda install pytorch torchvision -c pytorch
 conda install opencv
 ```
 
-## Demo
+## Convert to python-free model
 
 ```bash
-cd demo
-python demo.py --image 'penguin.png'
+python convert_python_free.py --image 'penguin.png'
 ```
